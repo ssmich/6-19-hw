@@ -111,3 +111,48 @@ console.log(jimHaff);
 jimHaff.splice(2,1);
 console.log(jimHaff);
 
+// Yell at the Ninja Turtles
+//	1.	Create an array with the members of the ninja turtles 
+//		(Donatello, Leonardo, Raphael, Michaelangelo)
+
+let tmnt = ["Donatello", "Leonardo", "Raphael", "Michaelangelo"];
+console.log(tmnt);
+
+//	2.	Use a for loop to call .toUpperCase() on each of them and 
+//		print out the result.
+
+// Borrowed methodology from Ivan Seider and Mureinik at:
+// https://stackoverflow.com/questions/40192262/convert-uppercase-and-lowercase-in-javascript
+for (let i = 0; i < tmnt.length; i++) {
+	let allCapsArray = [];
+	let toAllCapsString = tmnt[i];
+	let allCapsString = ""
+	for (let c = 0; c < toAllCapsString.length; c++); {
+		allCapsString += toAllCapsString.toUpperCase();
+		allCapsArray.push(allCapsString);
+	};
+	console.log(allCapsArray);
+};
+
+//	Bonus: Modify the answer you just wrote. Instead of all letters 
+//	being uppercase, make the letters alternate back and forth between 
+//	uppercase and lowercase.
+
+let tMnT = []
+function toUpperLower(str) {
+	let result = "";
+	for (let i = 0; i < str.length; i++){
+		if(i % 2 === 0){
+			result += str[i].toUpperCase();
+		} else {
+			result += str[i];
+		}
+	}
+	return result
+}
+
+for (let i = 0; i < tmnt.length; i++) {
+	tMnT.push(toUpperLower(tmnt[i]));
+}
+
+console.log(tMnT);		
